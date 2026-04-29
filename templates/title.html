@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+    <h1>Mācību Ekskursija Liepājā</h1>
+    <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 30px;">
+        Iepazīsti Liepāju interaktīvā veidā! Saci pareizas atbildes par intresantām vietām un iegūsti punktus.
+    </p>
+    <div class="ui" style="flex-direction: column; align-items: center;">
+        <a href="{{ url_for('start') }}" class="btn" style="min-width: 200px; text-align: center;">🎮 Sākt Spēli</a>
+        <a href="{{ url_for('results') }}" class="btn btn-secondary" style="min-width: 200px; text-align: center;">📊 Rezultāti</a>
+        <a href="{{ url_for('about') }}" class="btn btn-secondary" style="min-width: 200px; text-align: center;">ℹ️ Par Spēli</a>
+    </div>
+    <p style="text-align: center; margin-top: 40px; color: #888; font-size: 0.95em;">
+        Autors: 'Binārais Trio', 2026
+    </p>
+</div>
+{% endblock %}

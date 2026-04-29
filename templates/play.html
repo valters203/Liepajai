@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1 style="flex: 1; margin: 0; text-align: left; color: #667eea; font-size: 1.8em;">Jautājums</h1>
+        <div class="score" style="position: relative; top: 0; right: 0;">Punkti: {{ session['score'] }}</div>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; margin: 20px 0; color: white;">
+        <p style="font-size: 1.2em; margin: 0; color: white; line-height: 1.8;">{{ q.question }}</p>
+    </div>
+    
+    <form method="post">
+        {% for opt in q.options %}
+        <button type="submit" name="answer" value="{{ opt }}" class="btn" style="width: 100%; max-width: 100%; margin: 10px 0;">{{ opt }}</button>
+        {% endfor %}
+    </form>
+    
+    {% if wrong %}
+    <div class="error-message">
+        ❌ Nepareizi! Mēģiniet vēlreiz!
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

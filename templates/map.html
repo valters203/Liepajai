@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title-badge">Karte</h1>
+<div class="score">Punkti: {{ session['score'] }}</div>
+<div class="map-container" id="map-container">
+    <div class="map-wrapper" id="map-wrapper">
+        <img src="{{ url_for('static', filename='map.png') }}" alt="Liepājas karte" class="map" id="map" draggable="false">
+        <a href="{{ url_for('level', id=0) }}" class="map-btn{% if visited[0] %} visited{% endif %}" data-name="Karostas Cietums" style="left: 843px; top: 825px;">1</a>
+        <a href="{{ url_for('level', id=1) }}" class="map-btn{% if visited[1] %} visited{% endif %}" data-name="Sv. Trīsvienības katedrāle" style="left: 802px; top: 1285px;">2</a>
+        <a href="{{ url_for('level', id=2) }}" class="map-btn{% if visited[2] %} visited{% endif %}" data-name="Lielais Dzintars" style="left: 775px; top: 1270px;">3</a>
+        <a href="{{ url_for('level', id=3) }}" class="map-btn{% if visited[3] %} visited{% endif %}" data-name="Sv. Nikolaja Jūras katedrāle" style="left: 815px; top: 777px;">4</a>
+        <a href="{{ url_for('level', id=4) }}" class="map-btn{% if visited[4] %} visited{% endif %}" data-name="Liepājas Muzejs" style="left: 726px; top: 1270px;">5</a>
+        <a href="{{ url_for('level', id=5) }}" class="map-btn{% if visited[5] %} visited{% endif %}" data-name="Spoku Koks" style="left: 665px; top: 1320px;">6</a>
+        <a href="{{ url_for('level', id=6) }}" class="map-btn{% if visited[6] %} visited{% endif %}" data-name="Romas Dārzs" style="left: 790px; top: 1312px;">7</a>
+        <a href="{{ url_for('level', id=7) }}" class="map-btn{% if visited[7] %} visited{% endif %}" data-name="Kārļa Zāles piemineklis" style="left: 813px; top: 1263px;">8</a>
+        <a href="{{ url_for('level', id=8) }}" class="map-btn{% if visited[8] %} visited{% endif %}" data-name="Sv. Jāzepa katedrāle" style="left: 751px; top: 1350px;">9</a>
+        <a href="{{ url_for('level', id=9) }}" class="map-btn{% if visited[9] %} visited{% endif %}" data-name="Liepājas himnas tēlu skulptūras" style="left: 707px; top: 1280px;">10</a>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+</div>
+<div class="ui">
+    <a href="{{ url_for('about') }}" class="btn">Noteikumi</a>
+    <a href="{{ url_for('restart') }}" class="btn">Restartēt spēli</a>
+    <a href="{{ url_for('title') }}" class="btn">Iziet</a>
+</div>
+<script src="{{ url_for('static', filename='map.js') }}"></script>
+{% endblock %}

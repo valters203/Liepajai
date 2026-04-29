@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+    <h1>Par Spēli</h1>
+    
+    <h2>🎮 Kā Spēlēt</h2>
+    <p>✨ Lai kustinātu karti izmantojiet bultiņu pogas uz savas klaviatūras vai kustiniet karti ar peli</p>
+    <p>🎯 Lai sāktu uzdevumu uzklikšķiniet uz vienu no sarkanajiem punktiem</p>
+    
+    <h2>⭐ Punktu Sistēma</h2>
+    <p>✅ Par katru pareizo atbildi tiek doti <strong>5 punkti</strong></p>
+    <p>⚠️ Kļūdoties 1 reizi saņemi <strong>3 punktus</strong></p>
+    <p>❌ Kļūdoties 2 reizes saņem tikai <strong>1 punktu</strong></p>
+    
+    <h2>👥 Autori</h2>
+    <p>Spēli veidoja Pēteris Poļikovs, Ella Jēkabsone un Valters Jūrmalis</p>
+    
+    <h2>🗺️ Avoti</h2>
+    <p><strong>Karte:</strong> <a href="https://anvaka.github.io/city-roads/?q=Liepāja&areaId=3613048685" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">city-roads</a></p>
+    <p><strong>Informācija par apskates vietām:</strong></p>
+    <ul style="color: #666;">
+        <li><a href="https://liepaja.travel/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">liepaja.travel</a></li>
+        <li><a href="https://www.karosta.lv/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">karosta.lv</a></li>
+        <li><a href="https://www.liepajasmuzejs.lv/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">liepajasmuzejs.lv</a></li>
+    </ul>
+    
+    <div class="ui">
+        <a href="{{ url_for('title') }}" class="btn">← Galvenā Izvēlne</a>
+        <a href="{{ url_for('map') }}" class="btn btn-secondary">Uz Karti →</a>
+    </div>
+</div>
+{% endblock %}

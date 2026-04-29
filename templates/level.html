@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="position: relative;">
+    <div style="position: absolute; top: 0; right: 0;" class="score">Punkti: {{ session['score'] }}</div>
+</div>
+
+<div class="content-wrapper" style="margin-top: 60px;">
+    <h1 style="color: #667eea; margin-top: 0;">{{ name }}</h1>
+    
+    {% if image %}
+    <div style="text-align: center; margin: 30px 0;">
+        <img src="{{ url_for('static', filename=image) }}" alt="{{ name }}" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);">
+    </div>
+    {% endif %}
+    
+    <div style="background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f5 100%); padding: 25px; border-radius: 15px; margin: 25px 0; border-left: 5px solid #667eea;">
+        <p style="font-size: 1.05em; line-height: 1.9; color: #555; margin: 0;">{{ desc[0] }}{{ desc[1] }}</p>
+        <p style="font-size: 1.05em; line-height: 1.9; color: #555; margin: 15px 0 0 0;">{{ desc[2] }}{{ desc[3] }}</p>
+    </div>
+    
+    <div class="ui">
+        <a href="{{ url_for('play', id=id) }}" class="btn" style="min-width: 200px;">🎯 Sākt Jautājumu</a>
+        <a href="{{ url_for('map') }}" class="btn btn-secondary" style="min-width: 200px;">← Atpakaļ uz karti</a>
+    </div>
+</div>
+{% endblock %}
